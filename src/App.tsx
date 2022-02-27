@@ -18,11 +18,19 @@ const App: React.FC = () => {
       } else {
         alert('Get a Phantom Wallet')
       }
-      
     } catch (error) {
       console.log(error)
     }
   }
+
+  const renderNotConnectedContainer = (): JSX.Element => (
+    <button
+      className="cta-button connect-wallet-button"
+      onClick={connectWallet}
+    >
+      Connect to Wallet
+    </button>
+  );
 
   useEffect(() => {
     const onLoad = async () => {
