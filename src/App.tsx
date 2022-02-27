@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 
 declare const window: any
 
 const App: React.FC = () => {
+
+  const [walletAddress, setWalletAddress] = useState<string>('')
 
   const checkIfWalletIsConnected = async (): Promise<void> => {
     try {
