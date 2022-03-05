@@ -10,18 +10,32 @@ const App: React.FC = () => {
 
   const checkIfWalletIsConnected = async (): Promise<void> => {
     try {
-      const {solana}  = window;
-      if (solana && solana.isPhantom) {
-        const response = await solana.connect({ onlyIfTrusted: true });
-        console.log(
-          'Connected with Public Key:',
-          response.publicKey.toString()
-        );
+      const { solana } = window;
+
+      if (solana) {
+        if (solana.isPhantom) {
+          console.log('Phantom wallet found!');
+          const response = await solana.connect({ onlyIfTrusted: true });
+          console.log(
+            'Connected with Public Key:',
+            response.publicKey.toString()
+          );
+          setWalletAddress(response.publicKey.toString());
+        }
       } else {
-        alert('Get a Phantom Wallet')
+        alert('Solana object not found! Get a Phantom Wallet 👻');
       }
     } catch (error) {
-      console.log(error)
+      console.error(error);
+    }
+  };
+
+  const connectWallet = async (): Promise<void> => {
+    const { solana } = window
+    if (solana) {
+      const response = await solana.connect()
+      console.log('Connected with Public Key:', response.publicKey.toString());
+      setWalletAddress(response.publicKey.toString());
     }
   }
 
@@ -44,7 +58,10 @@ const App: React.FC = () => {
 
 
   return (
-    <div>Solana</div>
+    <div>
+    <h1>Solana NFT</h1>
+    <div>{!walletAddress && renderNotConnectedContainer()}</div>
+    </div>
   )
 }
 

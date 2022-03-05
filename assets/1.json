@@ -1,0 +1,19 @@
+{
+  "name": "snake1",
+  "symbol": "",
+  "image": "1.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "1.png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "8Pfbxcki9VNdpcSaHof53Jh2zW4ULo5DuKNckJ74rc3N",
+        "share": 100
+      }
+    ]
+  }
+}
