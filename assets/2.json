@@ -1,5 +1,5 @@
 {
-  "name": "snake2",
+  "name": "NAME_OF_NFT",
   "symbol": "",
   "image": "2.png",
   "properties": {
@@ -11,7 +11,7 @@
     ],
     "creators": [
       {
-        "address": "8Pfbxcki9VNdpcSaHof53Jh2zW4ULo5DuKNckJ74rc3N",
+        "address": "Hcr1C1pf6RP1NCXrwT8z776E4n6CvdVQtBsNZ2rKyjLX",
         "share": 100
       }
     ]
